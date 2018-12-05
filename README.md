@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+## Welcome to Joomla Plugin For YOYOW Blockchain
 
-You can use the [editor on GitHub](https://github.com/YOYOW-Association/YOYOW-Joomla-Plugin/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+YOYOW is a blockchain based content value network, its main goal is to establish a rational content income distribution mechanism to provide token incentives to content creators, website owners, content curators and consumers.
+This plugin is developed based on the middleware of YOYOW blockchain to enable joomla websites to interact with YOYOW blockchain.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+For more info, visit: https://yoyow.org/en.html
+### This plugin doesn’t provide token incentives at the moment, the token incentive feature is expected to go live on the 2nd quarter of 2019
 
-### Markdown
+## The plugin has completed the following features:
+1.	User login using identity from YOYOW blockchain
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## The version 2.0 (1st  quarter of 2019) of the plugin will complete the following features:
+1.	Post articles or hash values to the blockchain for blockchain content storage, witness and copyright protection
+2.	QR Code login feature
+3.	Direct token transfer to send token reward to content creators
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/YOYOW-Association/YOYOW-Joomla-Plugin/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## The version 3.0 (2nd quarter of 2019) of the plugin will complete the following features:
+1.	Token incentive feature
