@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_YOYOW_NAME</name>
+    <creationDate>2018-10-08</creationDate>
+    <copyright>2018 Pablo</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Pablo</author>
+    <authorEmail>pablojuarez@notwebdesign.com</authorEmail>
+    <authorUrl>http://pablojuarezalonso.es</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>MOD_YOYOW_DESCRIPTION</description>
+
+    <files>
+        <filename module="mod_yoyow">mod_yoyow.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="languages">
+			<language tag="en-GB">en-GB/en-GB.mod_yoyow.ini</language>
+			<language tag="en-GB">en-GB/en-GB.mod_yoyow.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset label="Module" name="basic">
+                <!--<field name="enableqr" type="checkbox" default="checked" label="MOD_YOYOW_FORM_LBL_ENABLEQR" description="MOD_YOYOW_FORM_DESC_ENABLEQR" hint="MOD_YOYOW_FORM_LBL_ENABLEQR"/>-->
+                <field name="requiredyoyowsignup" type="checkbox" label="MOD_YOYOW_FORM_LBL_REQUIREDYOYOWSIGNUP" description="MOD_YOYOW_FORM_DESC_REQUIREDYOYOWSIGNUP" hint="MOD_YOYOW_FORM_LBL_REQUIREDYOYOWSIGNUP"/>
+                <field name="apiurl" validate="url" type="url" label="MOD_YOYOW_FORM_LBL_APIURL" description="MOD_YOYOW_FORM_DESC_APIURL" hint="MOD_YOYOW_FORM_LBL_APIURL"/>
+                <field name="apiid" filter="safehtml" type="number" label="MOD_YOYOW_FORM_LBL_APIID" description="MOD_YOYOW_FORM_DESC_APIID" hint="MOD_YOYOW_FORM_LBL_APIID"/>
+                <field name="redirecturl" filter="url" type="url" label="MOD_YOYOW_FORM_LBL_REDIRECTURL" description="MOD_YOYOW_FORM_DESC_REDIRECTURL" hint="MOD_YOYOW_FORM_LBL_REDIRECTURL"/>
+            </fieldset>
+        </fields>
+        <fields name="params">
+            <fieldset
+                name="content_type"
+                label="MOD_YOYOW_CONTENT_TYPE_TAB_LBL"
+                description="MOD_YOYOW_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_YOYOW_CONTENT_TYPE_LBL"
+                    description="MOD_YOYOW_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_YOYOW_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_YOYOW_LIST</option>
+                    <option value="item">MOD_YOYOW_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset
+                name="blank_content"
+                label="MOD_YOYOW_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_YOYOW_CUSTOM_CONTENT_TAB_DESC">
+                <field
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_YOYOW_HTML_LBL"
+                    description="MOD_YOYOW_HTML_DESC" />
+            </fieldset>
+            <fieldset
+                name="list_content"
+                label="MOD_YOYOW_LIST_CONTENT_TAB_LBL"
+                description="MOD_YOYOW_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_YOYOW_TABLE_LBL"
+                    description="MOD_YOYOW_TABLE_DESC">
+
+                </field>
+                <field
+                    name="field" type="groupedlist" default=""
+                    label="MOD_YOYOW_FIELD_LBL"
+                    description="MOD_YOYOW_FIELD_DESC">
+
+                </field>
+                <field
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_YOYOW_OFFSET_LBL"
+                    description="MOD_YOYOW_OFFSET_DESC" />
+                <field
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_YOYOW_LIMIT_LBL"
+                    description="MOD_YOYOW_LIMIT_DESC" />
+            </fieldset>
+            <fieldset
+                name="item_content"
+                label="MOD_YOYOW_ITEM_CONTENT_TAB"
+                description="MOD_YOYOW_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_YOYOW_TABLE_LBL"
+                    description="MOD_YOYOW_TABLE_DESC">
+
+                </field>
+                <field
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_YOYOW_ITEM_ID_LBL"
+                    description="MOD_YOYOW_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
