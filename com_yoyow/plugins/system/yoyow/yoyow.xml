@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system">
+    <name>System - Yoyow plugin</name>
+    <author>Pablo</author>
+    <creationDate>2018-10-08</creationDate>
+    <copyright>2018 Pablo</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>pablojuarez@notwebdesign.com</authorEmail>
+    <authorUrl>http://pablojuarezalonso.es</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>Let us check if the user is forced to login with yoyow and if it is, redirect always to the yoyow's login button.</description>
+    <files>
+        <filename plugin="yoyow">yoyow.php</filename>
+        <filename>index.html</filename>
+    </files>
+</extension>
