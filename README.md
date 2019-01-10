@@ -85,6 +85,7 @@ visit this webpage for more info about how to config the middleware and for the 
 - `YOYOW Id` Your YOYOW Id (I.E. 27775948)
 - `Url redirect` After users validate their account on yoyow platform, where they should be redirect? (I.E. http://myPage.es)
 
+
 ### Module position
 1. Login as administrator (Admin panel)
 2. Go to `Modules`
