@@ -1,5 +1,73 @@
 # Welcome to Joomla! Extension For YOYOW Blockchain
 
+Before installing the Joomla! Extension For YOYOW Blockchain you will need to register an account and register your account as platform account and install the middleware on your server first.
+
+## Platform configuration
+Follow the instruction below to register an account on YOYOW Blockchain
+
+https://wiki.yoyow.org/en/latest/others/create_platform.html#creating-accounts-getting-private-keys
+
+And then register your account as platform account
+
+https://wiki.yoyow.org/en/latest/others/create_platform.html#creating-platforms
+
+## Middleware installation
+YOYOW middleware communicates with YOYOW network through the API interface of YOYOW node. to use the Joomla! Extension For YOYOW Blockchain, you will need to deploy the middleware first
+
+### Configuration File Description
+
+The path to the configuration file is in the `conf/config.js` file in the code path. If you start it in docker mode, you can map the configuration file to the `/app/conf` directory in the container.
+
+```javascript
+{
+    // The api server address, the testnet public api address is as follows, for the official network deployment, please change the address
+    apiServer: "ws://47.52.155.181:10011",
+    
+    // The validity time of the security request, and the unit is "s". If the requested content exceeds the validity period, it will return 1003 the request has expired.
+    secure_ageing: 60,
+    
+    // The platform security request verification key can be customized. For details, see "Security Access".
+    secure_key: "",
+    
+    // Platform owner active key 
+    active_key: "",
+    
+    // Platform owner secondary key
+    secondary_key: "", 
+    
+    // Platform owner memo key
+    memo_key: "",
+    
+    // Platform id (yoyow id)
+    platform_id: "",
+    
+    // Whether to use points for the operating fee
+    use_csaf: true,
+    
+    // Whether the transfer is transferred to the balance, otherwise it is transferred to tipping
+    to_balance: false,
+    
+    // Wallet authorization page URL, testnet address is as follows, official network address “https://wallet.yoyow.org/#/authorize-service”
+    wallet_url: "http://demo.yoyow.org:8000/#/authorize-service",
+    
+    // The IP list that is allowed to access； forcing the specific IP address to be specified. "*" or "0.0.0.0" is not supported at this time.
+    allow_ip: ["localhost", "127.0.0.1"]
+}
+```
+
+Note:
+
+1. In the general use scenario, the middleware value needs to use the secondary key and the memo key at most, and just the secondary key and the memo key can satisfy most of the requirements. Do not write the active key into the configuration file unless you are sure you need to use the active key.
+2. The middleware uses the restriction IP (`allow_ip`) and encryption request (`secure_key`) to ensure security. However, it is still strongly recommended that the intranet be deployed and isolated, and the security of the private key is quite important.
+3. It is recommended to use the point deduction for the operation fee. If the deduction fails, it will directly report the error and will not automatically deduct the tipping as the fee.
+
+### Middleware Docker One-Click Deployment:
+```bash
+docker run -itd --name yoyow-middleware -v <Local configuration file path>:/app/conf -p 3001:3001 yoyoworg/yoyow-middleware
+```
+
+visit this webpage for more info about how to config the middleware and for the faq of the deployment of middleware: https://wiki.yoyow.org/en/latest/sdk/intro.html
+
 ## Component installation/configuration
 ### Installation
 1. Login as administrator (Admin panel)
